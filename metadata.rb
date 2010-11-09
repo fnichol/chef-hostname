@@ -9,6 +9,6 @@ version          "0.1"
   supports os
 end
 
-attribute "hostname/name",
+attribute "node_hostname",
   :display_name => "Hostname of node",
   :description => "The desired hostname of the node"

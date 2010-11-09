@@ -24,7 +24,7 @@ ruby_block "restart_chef" do
   block do
     if fork
       # i am the parent
-      Chef::log "Restarting chef..."
+      Chef::Log.info "Restarting chef..."
       exit 0
     else
       # i am the child
@@ -55,6 +55,7 @@ template "/etc/hostname" do
   owner "root"
   group "root"
   mode "0644"
+  action :create
   notifies :start, "service[hostname]", :immediately
 end
 
